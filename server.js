@@ -9,6 +9,8 @@ app.listen(4000, function() {
   console.log('listening on 4000')
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
+app.use(express.static('./dist'));
+
+app.use('/', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html')
 });

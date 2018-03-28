@@ -1,27 +1,25 @@
-/**
- * Created by Алексей on 11.03.2018.
- */
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-const webpack = require("webpack");
+const htmlWebpackPlugin = new HtmlWebPackPlugin({
+  template: "index.html",
+  filename: "./index.html"
+});
 
-module.exports ={
-    entry: "./src/index.js",
-    output: {
-        filename: "bundle.js"
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                loader: "babel-loader",
-                query: {
-                    presets: ["env", "react"]
-                }
-            }
-        ]
-    },
-    devServer: {
-        historyApiFallback: true,
-    }
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  plugins: [htmlWebpackPlugin]
 };
