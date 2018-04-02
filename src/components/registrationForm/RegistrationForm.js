@@ -3,38 +3,27 @@
  */
 
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, FormControl, ControlLabel, Col } from 'react-bootstrap';
 
 class RegistrationForm extends Component {
 
     render() {
         return (
             <div>
-                <Form horizontal>
-                    <FormGroup controlId="formHorizontalEmail">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Email
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="email" placeholder="Email" />
-                        </Col>
-                    </FormGroup>
+                <form action="/registration-request" method="POST">
 
-                    <FormGroup controlId="formHorizontalPassword">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Password
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="password" placeholder="Password" />
-                        </Col>
-                    </FormGroup>
+                    <label>
+                        Email<br/>
+                        <input type="email" placeholder="Email" name="email" />
+                    </label><br/>
 
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Button type="submit">Registration</Button>
-                        </Col>
-                    </FormGroup>
-                </Form>
+                    <label>
+                        Password<br/>
+                        <input type="password" placeholder="Password" name="password" />
+                    </label><br/>
+
+                    <button type="submit">Registration</button>
+
+                </form>
             </div>
         );
     }

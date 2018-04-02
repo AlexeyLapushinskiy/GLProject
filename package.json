@@ -1,11 +1,13 @@
 {
-  "name": "blog",
+  "name": "GLProject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "mongodb": "^3.0.5",
     "react": "^16.2.0",
-    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
@@ -28,10 +30,9 @@
     "nodemon": "^1.17.2",
     "path": "^0.12.7",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-cli": "^2.0.12"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description": "GLProject",
   "main": "webpack.config.js",
   "author": "",
   "license": "ISC"

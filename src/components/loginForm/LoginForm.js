@@ -3,38 +3,37 @@
  */
 
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, FormControl, ControlLabel, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 class LoginForm extends Component {
+    constructor (props) {
+        super(props);
+        this.submitForm = this.submitForm.bind(this);
+    }
+
+    submitForm() {
+        // axios.post('/login-request')
+        //     .then(response => console.log(response))
+    };
 
     render() {
         return (
             <div>
-                <Form horizontal>
-                    <FormGroup controlId="formHorizontalEmail">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Email
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="email" placeholder="Email" />
-                        </Col>
-                    </FormGroup>
+                <form action="/login-request" method="POST">
 
-                    <FormGroup controlId="formHorizontalPassword">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Password
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="password" placeholder="Password" />
-                        </Col>
-                    </FormGroup>
+                    <label>
+                        Email<br/>
+                        <input type="email" placeholder="Email" name="email" />
+                    </label><br/>
 
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Button type="submit">Login</Button>
-                        </Col>
-                    </FormGroup>
-                </Form>
+                    <label>
+                        Password<br/>
+                        <input type="password" placeholder="Password" name="password" />
+                    </label><br/>
+
+                    <button type="submit" onClick={this.submitForm}>Login</button>
+
+                </form>
             </div>
         );
     }
